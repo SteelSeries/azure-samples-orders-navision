@@ -17,11 +17,8 @@ def main(event: func.EventGridEvent):
     if navision.posted_shipment_exists(data["order_number"]):
         return True
 
-    # Make json for Country stuff for VAT
-    # Make json for VAT groups
-
     # TODO CREATE ORDER FROM DATA
     order = generate_order_data(data)
-    
+
     return navision.create_order(order)
     
